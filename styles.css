@@ -1,0 +1,137 @@
+html, body {
+    background-color: rgb(0, 20, 40);
+    color: rgb(210, 230, 250);
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.title {
+    color: rgb(1, 1, 61);
+    background-color: rgb(210, 234, 255);
+    text-align: center;
+    margin: 40px auto;
+    border: solid;
+    padding: 40px;
+    width: 300px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px rgb(209, 224, 253);
+
+}
+
+p {
+    margin:  20px 90px;
+    line-height: 35px;
+    padding-bottom: 30px;
+}
+
+.head {
+    margin: 20px 70px;
+    border-bottom: solid;
+    padding-bottom: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.main, .menu-item {
+    background-color: rgb(0, 30, 110);
+    color: rgb(210, 230, 250);
+    padding: 30px;
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+.main {
+    background-color: rgb(0, 20, 40);
+}
+
+.menu-item:hover {
+    background-color: rgb(10, 40, 140);
+}
+
+.menu-item:active {
+    background-color: rgb(10, 70, 190);
+}
+
+/* --------- log-in styles ------------- */
+
+.log-in {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 300px;
+}
+
+ .log-in-element {
+    justify-content: center;
+ }
+
+ h2 {
+    margin-bottom: 10px;
+ }
+
+ input {
+    margin-bottom: 5px;
+    width: 300px;
+    height: 25px;
+    border-radius: 10px;
+    padding: 1px 10px;
+ }
+
+button {
+    margin-top: 30px;
+    height: 33px;
+    width: 125px;
+    padding: 7px 30px;
+    border-radius: 10px;
+    background-color: rgb(144, 163, 255);
+    border: solid;
+    margin-bottom: 70px;
+}
+
+button:hover {
+    background-color: rgb(121, 142, 250);
+}
+
+button:active {
+    background-color: rgb(99, 125, 252);
+}
+
+/*------------ main page styles -------------*/
+
+.search {
+    text-align: center;
+    padding: 40px 70px;
+    border-bottom: solid;
+    border-top: solid;
+}
+
+.search-button {
+    width: 60px;
+    padding:5px;
+}
+
+/*------------- post styles -----------------*/
+
+.im {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: dotted;
+    height: 200px;
+    width: 200px;
+    margin: 30px auto;
+    border-radius: 40px;
+    border-width: 4px;
+    font-weight:900;
+    font-size: 40px;
+}
+
+.im:hover {
+    background-color: rgb(0, 52, 101);
+}
