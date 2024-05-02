@@ -9,17 +9,24 @@
         session_start();
 
         if (!isset($_SESSION["loggedin"])) {
-            header("Location:home.html?login=none");
+            header("Location:home.php?login=none");
         }
     ?>
 </head>
 <body>
     <div class="menu">
-        <a class="menu-item" href="home.html">Home</a>
+        <a class="menu-item" href="home.php">Home</a>
         <a class="menu-item" href="index.php">Cars</a>
         <div class="main">Post</div>
-        <a class="menu-item" href="login.html">Log In</a>
-        <a class="menu-item" href="signup.html">Sign Up</a>
+<?php
+            if (!isset($_SESSION["loggedin"])) { ?>
+                <a class="menu-item" href="login.html">Log In</a>
+                <a class="menu-item" href="signup.html">Sign Up</a>
+<?php       }
+            else { ?>
+                <a class="menu-item" href="logoutUser.php">Logout</a>
+<?php
+            } ?>
     </div>
     <h1 class="title">CAR SPOTTER !</h1>
     <div class="log-in">

@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Spotter!</title>
     <link rel="stylesheet" href="styles.css">
+    <?php session_start(); ?>
 </head>
 <body>
     <div class="menu">
-            <a class="menu-item" href="home.html">Home</a>
+            <a class="menu-item" href="home.php">Home</a>
             <div class="main">Cars</div>
             <a class="menu-item" href="post.php">Post</a>
-            <a class="menu-item" href="login.html">Log In</a>
-            <a class="menu-item" href="signup.html">Sign Up</a>
+<?php
+            if (!isset($_SESSION["loggedin"])) { ?>
+                <a class="menu-item" href="login.html">Log In</a>
+                <a class="menu-item" href="signup.html">Sign Up</a>
+<?php       }
+            else { ?>
+                <a class="menu-item" href="logoutUser.php">Logout</a>
+<?php
+            } ?>
         </div>
         <h1 class="title">CAR SPOTTER !</h1>
         <div class="search">
@@ -49,20 +57,5 @@
         }
     }
 ?>
-    <script>
-        let posts = document.getElementById('posts');
-
-        let year = "<?php echo $_POST["year"]; ?> ";
-        console.log(year);
-        let make = "<?php echo $_POST["make"]; ?> ";
-        let model = "<?php echo $_POST["model"]; ?> ";
-        let engine = "<?php echo $_POST["engine"]; ?> ";
-        
-         if(true) {
-            let newPost = document.createElement('p');
-            newPost.textContent = year + make + model + " with a " + engine + " engine.";
-            posts.appendChild(newPost);
-        }
-    </script>
 </body>
 </html>

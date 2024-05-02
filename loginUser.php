@@ -18,7 +18,7 @@
 
     // Check if data exists
     if (!isset($_POST["username"], $_POST["password"])) {
-        //header("Location:login.html?login=failed");
+        header("Location:login.html?login=failed");
         exit('Please fill both the username and password fields!');
     }
 
@@ -46,9 +46,9 @@
     }
 
     if (!$LOGGED_IN) {
-        header("Location:loginPage.php?login=failed");
+        header("Location:login.html?login=failed");
         exit("Username or password does not exist.");
     }
 
     mysqli_close($conn);
-    header("Location:login.html?login=success");
+    header("Location:home.php?login=success");
