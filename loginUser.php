@@ -52,3 +52,5 @@
 
     mysqli_close($conn);
     header("Location:home.php?login=success");
+
+?>
