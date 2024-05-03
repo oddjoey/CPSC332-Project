@@ -31,8 +31,9 @@
     <h1 class="title">CAR SPOTTER !</h1>
     <div class="log-in">
         <h1>Post your car</h1>
-        <div class="im">+</div>
         <form class="post" action="postUpload.php" id="post" method="post">
+            <h2>image URL</h2>
+            <input name="img" type="text" placeholder="image" id="img">
             <h2>year</h2>
             <input name="year" type="text" placeholder="year" id="year">
             <h2>make</h2>
