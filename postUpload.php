@@ -3,10 +3,11 @@
     session_start();
 
     if (!isset($_SESSION["loggedin"])) {
-        exit("Need to be logged into a user to post");
+        exit("Need to be logged in to post!");
     }
 
     $USERID = $_SESSION["id"];
+    $USERNAME = $_SESSION["username"];
     
     // Database information
     $DB_HOST = "localhost";
@@ -25,6 +26,7 @@
     $CARYEAR = 0;
     $CARMAKE = "";
     $CARMODEL = "";
+    $PHOTOURL = "";
 
     if (isset($_POST["year"])) {
         $CARYEAR = $_POST["year"];
@@ -35,11 +37,14 @@
     if (isset($_POST["model"])) {
         $CARMODEL = $_POST["model"];
     }
+    if (isset($_POST["img"])) {
+        $PHOTOURL = $_POST["img"];
+    }
 
-    $DATE = date('Y-m-d H:i:s');
+    $DATE = date('Y-m-d H:i');
 
-    $result = $conn->query("INSERT INTO posts (uploadDate, uploadedByUserID, carYear, carMake, carModel) VALUES ('$DATE', '$USERID', '$CARYEAR', '$CARMAKE', '$CARMODEL')");
+    $result = $conn->query("INSERT INTO posts (uploadedByUserID, uploadedByUsername, uploadDate, photoURL, carYear, carMake, carModel) 
+    VALUES ('$USERID', '$USERNAME', '$DATE', '$PHOTOURL', '$CARYEAR', '$CARMAKE', '$CARMODEL')");
 
     mysqli_close($conn);
     header("Location:index.php?status=success");
-?>
