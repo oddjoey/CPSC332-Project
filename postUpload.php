@@ -42,3 +42,4 @@
 
     mysqli_close($conn);
     header("Location:index.php?status=success");
+?>
