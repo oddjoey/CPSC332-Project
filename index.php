@@ -50,9 +50,20 @@
 
         if ($results->num_rows > 0) {
             while($row = $results->fetch_assoc()) {
-                $OUTPUT = "Post ID: " . $row["id"] . ", Upload Date: " . $row["uploadDate"] . ", User ID: " . $row["uploadedByUserID"] . ", Year: " . $row["carYear"] . ", Make: " . $row["carMake"] . ", Model: " . $row["carModel"];  
+               // $OUTPUT = "Post ID: " . $row["id"] . ", Upload Date: " . $row["uploadDate"] . ", User ID: " . $row["uploadedByUserID"] . ", Year: " . $row["carYear"] . ", Make: " . $row["carMake"] . ", Model: " . $row["carModel"]; 
+                $id = $row['id'];
+                $date = $row['uploadDate'];
+                $uid = $row['uploadedByUserID'];
+                $year = $row['carYear'];
+                $make = $row['carMake'];
+                $model = $row['carModel'];
+                
+                
 ?>
-            <p><?php echo $OUTPUT; ?></p>
+            <div class="newPost">
+                <h2 class="postName"><?php echo $uid . " spotted a " . $year . " " . $make . " " . $model . "!"; ?></h2>
+                <img>
+            </div>
 <?php   
         }
     }
